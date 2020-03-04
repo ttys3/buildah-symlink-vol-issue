@@ -1,0 +1,7 @@
+FROM 80x86/buildah-symlink-vol-issue:base
+
+RUN apk --update add --no-cache wget
+
+RUN wget --version
+
+# vim: set ft=dockerfile ts=4 sw=4 et:
