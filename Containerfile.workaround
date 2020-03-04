@@ -1,0 +1,14 @@
+FROM alpine:3.11
+
+# Create symbolic links to simplify mounting
+ RUN mkdir -p /home/app/.config \
+ && mkdir /config \
+ && touch /config/.not-mapped \
+ && ln -sf /config /home/app/.config/qBittorrent
+
+ # ...
+
+ VOLUME ["/config"]
+
+
+# vim: set ft=dockerfile ts=4 sw=4 et:
