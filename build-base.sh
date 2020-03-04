@@ -3,7 +3,7 @@
 IMAGE_NAME=80x86/buildah-symlink-vol-issue
 
 echo "begin build base version ..." && \
-podman image rm -f ${IMAGE_NAME}:base
+podman image exists ${IMAGE_NAME}:base && podman image rm -f ${IMAGE_NAME}:base
 
 podman image prune -f && \
 buildah bud --format=docker \

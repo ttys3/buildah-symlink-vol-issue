@@ -1,8 +1,7 @@
 
 ```
-❯ sudo ./build-amd64.sh
+❯ sudo ./build-base.sh
 begin build base version ...
-Error: unable to find a name and tag match for 80x86/buildah-symlink-vol-issue in repotags: no such image
 STEP 1: FROM alpine:3.11
 STEP 2: RUN mkdir -p /home/app/.config/qBittorrent  && touch /home/app/.config/qBittorrent/.not-mapped  && ln -s /home/app/.config/qBittorrent /config
 STEP 3: VOLUME ["/config"]
@@ -20,9 +19,8 @@ end build base version ...
 
 
 ```
-❯ sudo ./build-second.sh 
+❯ sudo ./build-second.sh
 begin build second version ...
-Error: unable to find a name and tag match for 80x86/buildah-symlink-vol-issue in repotags: no such image
 STEP 1: FROM 80x86/buildah-symlink-vol-issue:base
 STEP 2: RUN apk --update add --no-cache wget
 error building at STEP "RUN apk --update add --no-cache wget": error resolving mountpoints for container "24fbbdfe233f0a36a4107ba61361af41b11c61502c741fcf0c90d718aba1c882": error creating directory "/var/lib/containers/storage/overlay/a2a7c5fb57492ee7f06061acf53699198624d31e57cd3e8dd49fb3e7a4028356/merged/config" for volume "/config": chown /var/lib/containers/storage/overlay/a2a7c5fb57492ee7f06061acf53699198624d31e57cd3e8dd49fb3e7a4028356/merged/config: no such file or directory
